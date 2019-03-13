@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade", "K.Facade\K.Facade.csproj", "{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Tests", "K.Facade.Tests\K.Facade.Tests.csproj", "{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5844AA64-BA21-4704-A899-13CDFF880B01}
+	EndGlobalSection
+EndGlobal
