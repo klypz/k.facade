@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\K.Facade\K.Facade.csproj" />
+    <ProjectReference Include="..\LayerFacade\LayerFacade.csproj" />
   </ItemGroup>
 
 </Project>

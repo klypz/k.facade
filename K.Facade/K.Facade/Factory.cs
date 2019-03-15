@@ -1,20 +1,33 @@
-﻿using System;
+﻿using K.Facade.Auxiliars;
+using System;
+using System.Reflection;
 
 namespace K.Facade
 {
+    //public static class Note
+    //{
+    //    public static string Version
+    //    {
+    //        get
+    //        {
+    //            AssemblyVersionAttribute.
+    //        }
+    //    }
+    //}
     /// <summary>
     /// <para>Responsável por gerenciar as fachadas registradas no ambiente global</para>
     /// </summary>
     public static class Factory
     {
+        public static Version Version { get; private set; } = new Version(0, 0, 3, 4);
         /// <summary>
         /// Obtém uma instancia referente a interface
         /// </summary>
         /// <typeparam name="T">Interface a ser instanciada</typeparam>
         /// <returns>Instancia baseada em interface</returns>
-        public static T GetInterface<T>()
+        public static T GetInstance<T>()
         {
-            throw new NotImplementedException();
+            return (T)MappingConfig.GetRegister(typeof(T));
         }
 
         /// <summary>
@@ -23,26 +36,13 @@ namespace K.Facade
         /// <typeparam name="T">Interface a ser instanciada</typeparam>
         /// <param name="target">Variação do mapeamento da interface</param>
         /// <returns>Instancia baseada em interface</returns>
-        public static T GetInterface<T>(string target)
+        public static T GetInstance<T>(string target)
         {
-            throw new NotImplementedException();
-        }
-    }
-
-    class Register
-    {
-        public Type Interface { get; set; }
-        public string Target { get; set; }
-        public object Value { get; set; }
-
-        public Register(Type @interface, object value)
-        {
-
+            return (T)MappingConfig.GetRegister(typeof(T), target);
         }
 
-        public Register(Type @interface, object value, string target)
-        {
+        static MappingConfig MappingConfig { get; set; } = new MappingConfig();
 
-        }
+        public static RegisterConfig Config { get; private set; } = new RegisterConfig(MappingConfig);
     }
 }

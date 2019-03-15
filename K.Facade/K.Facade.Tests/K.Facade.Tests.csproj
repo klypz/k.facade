@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute, Version=4.0.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\packages\NSubstitute.4.0.0\lib\net46\NSubstitute.dll</HintPath>
     </Reference>
@@ -60,11 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapperConfigTests.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterTests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +82,10 @@
     <ProjectReference Include="..\K.Facade\K.Facade.csproj">
       <Project>{e5ac9d16-30e9-47c1-bc45-92ee742dad63}</Project>
       <Name>K.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LayerFacade\LayerFacade.csproj">
+      <Project>{7A30B587-7F61-4AA6-9DE2-E0D98311673A}</Project>
+      <Name>LayerFacade</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
