@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade", "K.Facade\K.Facade.csproj", "{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K.Facade", "K.Facade\K.Facade.csproj", "{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Tests", "K.Facade.Tests\K.Facade.Tests.csproj", "{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadeTeste", "FacadeTeste\FacadeTeste.csproj", "{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

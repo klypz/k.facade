@@ -1,4 +1,6 @@
-﻿using K.Facade.Tests.Models;
+﻿using FacadeTeste;
+using K.Facade.Contracts;
+using K.Facade.Tests.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 
@@ -10,13 +12,10 @@ namespace K.Facade.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            MappingConfig config = new MappingConfig();
+            IInterface config2 = Substitute.For<IInterface>();
+            IMappingConfig config = new MappingConfig();
 
-            var result = config.Config(cfg =>
-            {
-                cfg.Map<IInterface, PInterface>();
-                cfg.Map<IInterface>("M", new MInterface());
-            });
+            var result = config.ConfigAssembly(new string[2] { "K.Facade.Tests", "FacadeTeste" });
 
             var n = result.GetInstance<IInterface>();
             var m = result.GetInstance<IInterface>("M");

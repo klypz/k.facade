@@ -68,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FacadeTeste\FacadeTeste.csproj">
+      <Project>{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}</Project>
+      <Name>FacadeTeste</Name>
+    </ProjectReference>
     <ProjectReference Include="..\K.Facade\K.Facade.csproj">
       <Project>{e5ac9d16-30e9-47c1-bc45-92ee742dad63}</Project>
       <Name>K.Facade</Name>

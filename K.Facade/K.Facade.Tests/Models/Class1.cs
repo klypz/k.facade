@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FacadeTeste;
 
 namespace K.Facade.Tests.Models
 {
-    public interface IInterface
+    [SetFacade(typeof(IInterface2))]
+    public class Interface : IInterface2
     {
-        string Name { get; set; }
-    }
-
-    public class PInterface : IInterface
-    {
-        public string Name { get; set; } = "Renato Moraes";
-    }
-
-    public class MInterface : IInterface
-    {
-        public string Name { get; set; } = "M Interface";
+        public string Name { get; set; } = "Interface2";
     }
 }
