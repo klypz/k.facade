@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using K.Essential.Quick;
+using System.Collections.Generic;
 
 namespace LayerFacade
 {
-    public interface ICustomer
+    public interface ICustomer: IMaintenance<object>
     {
         List<object> GetList();
 

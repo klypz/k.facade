@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="K.Essential.Quick" Version="1.0.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\K.Facade\K.Facade.csproj" />
     <ProjectReference Include="..\LayerFacade\LayerFacade.csproj" />
   </ItemGroup>

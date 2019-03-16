@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Tests", "K.Facade.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacadeTeste", "FacadeTeste\FacadeTeste.csproj", "{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerFacade", "LayerFacade\LayerFacade.csproj", "{7A30B587-7F61-4AA6-9DE2-E0D98311673A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LayerFacade", "LayerFacade\LayerFacade.csproj", "{7A30B587-7F61-4AA6-9DE2-E0D98311673A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
+		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
+		{7A30B587-7F61-4AA6-9DE2-E0D98311673A} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5844AA64-BA21-4704-A899-13CDFF880B01}

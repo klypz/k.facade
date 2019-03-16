@@ -1,25 +1,12 @@
 ﻿using K.Facade.Auxiliars;
-using System;
-using System.Reflection;
 
 namespace K.Facade
 {
-    //public static class Note
-    //{
-    //    public static string Version
-    //    {
-    //        get
-    //        {
-    //            AssemblyVersionAttribute.
-    //        }
-    //    }
-    //}
     /// <summary>
     /// <para>Responsável por gerenciar as fachadas registradas no ambiente global</para>
     /// </summary>
     public static class Factory
     {
-        public static Version Version { get; private set; } = new Version(0, 0, 3, 4);
         /// <summary>
         /// Obtém uma instancia referente a interface
         /// </summary>
@@ -43,6 +30,9 @@ namespace K.Facade
 
         static MappingConfig MappingConfig { get; set; } = new MappingConfig();
 
+        /// <summary>
+        /// Registra facade no ambiente global.
+        /// </summary>
         public static RegisterConfig Config { get; private set; } = new RegisterConfig(MappingConfig);
     }
 }

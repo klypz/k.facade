@@ -1,61 +1,54 @@
-﻿using LayerFacade;
+﻿using FacadeTeste;
+using K.Essential.Quick;
+using LayerFacade;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NSubstitute;
-using System.Collections.Generic;
 
 namespace K.Facade.Tests
 {
-    [SetFacade(typeof(IPeople), "DAQUI")]
-    internal class People2 : IPeople
-    {
-        public List<object> GetList()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Salvar(object entity)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
     [TestClass]
     public class RegisterTests
     {
         [TestMethod]
+        [TestCategory("Register")]
         public void RegisterGlobalTest()
         {
-            ICustomer customer = Substitute.For<ICustomer>();
-
             Factory.Config.ConfigAll();
 
-            Factory.Config.Config(a =>
-            {
-                a.Register("CUSTT", customer);
-            });
-
-            var tst = Factory.GetInstance<ICustomer>("CUSTT");
-            var peop2 = Factory.GetInstance<IPeople>("DAQUI");
-            Assert.AreEqual(customer, tst);
-            Assert.IsInstanceOfType(peop2, typeof(IPeople));
-            Assert.ThrowsException<InstanceForFacadeNotFoundException>(() =>
-            {
-                Factory.GetInstance<IPeople>("NAOEXISTE");
-            });
-
+            Assert.IsInstanceOfType(Factory.GetInstance<IPeople>(), typeof(IPeople));
+            Assert.IsInstanceOfType(Factory.GetInstance<ICustomer>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(Factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
         }
 
         [TestMethod]
+        [TestCategory("Register")]
         public void RegisterLocalTest()
         {
-            ICustomer customer = Substitute.For<ICustomer>();
             RegisterConfig registerConfig = new RegisterConfig();
-            registerConfig.Config(a =>
+            registerConfig.ConfigAll();
+
+            IFactory factory = registerConfig.Factory;
+
+            Assert.IsInstanceOfType(factory.GetInstance<IPeople>(), typeof(IPeople));
+            Assert.IsInstanceOfType(factory.GetInstance<ICustomer>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
+        }
+
+        [TestMethod]
+        [TestCategory("Register")]
+        public void RegisterManualLocalTests()
+        {
+            RegisterConfig registerConfig = new RegisterConfig();
+            registerConfig.Config(cfg =>
             {
-                a.Register("CUSTT", customer);
-                a.Register<IPeople, People2>();
+                cfg.Register<ICustomer, Customer2>();
+                cfg.Register<IMaintenance<object>, Customer2>();
             });
-            var fac = registerConfig.Factory;
+
+            IFactory factory = registerConfig.Factory;
+
+            Assert.ThrowsException<InstanceForFacadeNotFoundException>(() => factory.GetInstance<IPeople>());
+            Assert.ThrowsException<InstanceForFacadeNotFoundException>(() => factory.GetInstance<ICustomer>("2"));
+            Assert.IsInstanceOfType(factory.GetInstance<IMaintenance<object>>(), typeof(Customer2));
         }
     }
 }
