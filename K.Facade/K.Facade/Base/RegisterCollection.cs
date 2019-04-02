@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace K.Facade.Auxiliars
+namespace K.Facade.Base
 {
     class RegisterCollection : ICollection<Register>
     {

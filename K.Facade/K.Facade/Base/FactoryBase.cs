@@ -1,14 +1,12 @@
-﻿using K.Facade.Auxiliars;
-
-namespace K.Facade.Auxiliars
+﻿namespace K.Facade.Base
 {
-    internal sealed class FactoryBase : IFactory
+    public class FactoryBase : IFactory
     {
-        private MappingConfig mappingConfig = null;
+        private IMappingConfig mappingConfig = null;
 
         public IMappingConfig MappingConfig { get { return mappingConfig; } }
 
-        internal FactoryBase(MappingConfig mappingConfig)
+        internal FactoryBase(IMappingConfig mappingConfig)
         {
             this.mappingConfig = mappingConfig;
         }
@@ -18,7 +16,7 @@ namespace K.Facade.Auxiliars
         /// </summary>
         /// <typeparam name="T">Interface a ser instanciada</typeparam>
         /// <returns>Instancia baseada em interface</returns>
-        public T GetInstance<T>()
+        public virtual T GetInstance<T>()
         {
             return (T)mappingConfig.GetRegister(typeof(T));
         }
@@ -29,9 +27,19 @@ namespace K.Facade.Auxiliars
         /// <typeparam name="T">Interface a ser instanciada</typeparam>
         /// <param name="target">Variação do mapeamento da interface</param>
         /// <returns>Instancia baseada em interface</returns>
-        public T GetInstance<T>(string target)
+        public virtual T GetInstance<T>(string target)
         {
             return (T)mappingConfig.GetRegister(typeof(T), target);
+        }
+
+        public virtual T GetInstance<T>(params object[] constructor)
+        {
+            return (T)mappingConfig.GetRegister(typeof(T), constructor);
+        }
+
+        public virtual T GetInstance<T>(string target, params object[] constructor)
+        {
+            return (T)mappingConfig.GetRegister(typeof(T), target, constructor);
         }
     }
 }

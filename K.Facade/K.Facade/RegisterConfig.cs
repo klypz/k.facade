@@ -1,4 +1,4 @@
-﻿using K.Facade.Auxiliars;
+﻿using K.Facade.Base;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
@@ -10,9 +10,16 @@ namespace K.Facade
     /// <summary>
     /// Registra o conjunto de facade
     /// </summary>
-    public sealed class RegisterConfig
+    public class RegisterConfig
     {
-        private readonly MappingConfig mapping = new MappingConfig();
+        protected RegisterConfig(IMappingConfig mappingConfig)
+        {
+            mapping = mappingConfig;
+        }
+
+        public RegisterConfig() { }
+
+        private readonly IMappingConfig mapping = new MappingConfig();
 
         /// <summary>
         /// Factory com base no mapeamento da instância
@@ -22,11 +29,7 @@ namespace K.Facade
         /// <summary>
         /// Cria um novo mapeamento para registro de facade local
         /// </summary>
-        public RegisterConfig()
-        {
-
-        }
-
+        
         internal RegisterConfig(MappingConfig mapping)
         {
             this.mapping = mapping;

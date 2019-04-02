@@ -44,6 +44,8 @@ namespace K.Facade.Tests
                 cfg.Register<IMaintenance<object>, Customer2>();
             });
 
+            var t = registerConfig.Factory.GetInstance<ICustomer>((object)"Renato");
+
             IFactory factory = registerConfig.Factory;
 
             Assert.ThrowsException<InstanceForFacadeNotFoundException>(() => factory.GetInstance<IPeople>());

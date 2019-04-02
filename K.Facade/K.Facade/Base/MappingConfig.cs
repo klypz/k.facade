@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace K.Facade.Auxiliars
+namespace K.Facade.Base
 {
-    internal sealed class MappingConfig : IMappingConfig
+    public class MappingConfig : IMappingConfig
     {
         internal List<Register> Registers { get; private set; } = new List<Register>();
 
@@ -13,7 +13,7 @@ namespace K.Facade.Auxiliars
 
         }
 
-        public void Register(Type @interface, string target, object value)
+        public virtual void Register(Type @interface, string target, object value)
         {
             if (@interface == null)
             {
@@ -52,11 +52,11 @@ namespace K.Facade.Auxiliars
             }
         }
 
-        internal object GetRegister(Type type)
+        public virtual object GetRegister(Type type)
         {
-            return GetRegister(type, null);
+            return GetRegister(type, (string)null);
         }
-        internal object GetRegister(Type type, string target)
+        public virtual object GetRegister(Type type, string target)
         {
             if (!Registers.Any(a => a.Interface == type && a.Target == target))
             {
@@ -75,7 +75,30 @@ namespace K.Facade.Auxiliars
             }
         }
 
-        public void Register(Type @interface, object value)
+        public virtual object GetRegister(Type type, params object[] constructor)
+        {
+            return GetRegister(type, null, constructor);
+        }
+        public virtual object GetRegister(Type type, string target, params object[] constructor)
+        {
+            if (!Registers.Any(a => a.Interface == type && a.Target == target))
+            {
+                throw new InstanceForFacadeNotFoundException(type.Name);
+            }
+
+            var register = Registers.FirstOrDefault(a => a.Interface == type && a.Target == target);
+
+            if (register.IsType)
+            {
+                return Activator.CreateInstance((Type)register.Value, constructor);
+            }
+            else
+            {
+                return register.Value;
+            }
+        }
+
+        public virtual void Register(Type @interface, object value)
         {
             if (@interface == null)
             {
@@ -108,22 +131,22 @@ namespace K.Facade.Auxiliars
             }
         }
 
-        public void Register<T>(T value)
+        public virtual void Register<T>(T value)
         {
             Register(typeof(T), value);
         }
 
-        public void Register<T>(string target, T value)
+        public virtual void Register<T>(string target, T value)
         {
             Register(typeof(T), target, value);
         }
 
-        public void Register<T, TValue>() where TValue : T, new()
+        public virtual void Register<T, TValue>() where TValue : T, new()
         {
             Register(typeof(T), typeof(TValue));
         }
 
-        public void Register<T, TValue>(string target) where TValue : T, new()
+        public virtual void Register<T, TValue>(string target) where TValue : T, new()
         {
             Register(typeof(T), target, typeof(TValue));
         }

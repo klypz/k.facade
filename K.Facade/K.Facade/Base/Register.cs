@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace K.Facade.Auxiliars
+namespace K.Facade.Base
 {
     internal class Register : IEquatable<Register>, IComparable<Register>
     {

@@ -11,6 +11,16 @@ namespace FacadeTeste
     [SetFacade(typeof(IMaintenance<object>), "2")]
     public class Customer2 : ICustomer
     {
+        public Customer2()
+        {
+
+        }
+
+        public Customer2(string teste)
+        {
+
+        }
+
         public int Delete(object entity)
         {
             throw new NotImplementedException();
