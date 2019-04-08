@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1-beta</Version>
+    <Authors>Renato Moraes</Authors>
+    <Company>Klypz.com.br</Company>
+    <Product>Klypz Facade Data</Product>
+    <Description>Mapeamento baseado no modelo facade visando abranger o "território" de acesso a dados</Description>
+    <Copyright>MIT 2019</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>K:\Projeto K\k.facade\K.Facade\K.Facade.Data\K.Facade.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\K.Facade\K.Facade.csproj" />
+  </ItemGroup>
+
+</Project>

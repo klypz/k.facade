@@ -12,6 +12,9 @@ namespace K.Facade
     /// </summary>
     public class RegisterConfig
     {
+        protected Type SetFacadeAttribute { get; set; } = typeof(SetFacadeAttribute);
+        private readonly IMappingConfig mapping = new MappingConfig();
+
         protected RegisterConfig(IMappingConfig mappingConfig)
         {
             mapping = mappingConfig;
@@ -19,17 +22,18 @@ namespace K.Facade
 
         public RegisterConfig() { }
 
-        private readonly IMappingConfig mapping = new MappingConfig();
 
         /// <summary>
         /// Factory com base no mapeamento da instância
         /// </summary>
         public IFactory Factory => new FactoryBase(mapping);
 
+        protected string ConfigFileName { get; set; } = "\\config.json";
+
         /// <summary>
         /// Cria um novo mapeamento para registro de facade local
         /// </summary>
-        
+
         internal RegisterConfig(MappingConfig mapping)
         {
             this.mapping = mapping;
@@ -68,7 +72,7 @@ namespace K.Facade
         /// </example>
         public void ConfigAll()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "\\config.json"))
+            if (File.Exists(Directory.GetCurrentDirectory() + this.ConfigFileName))
             {
                 ConfigAll(Directory.GetCurrentDirectory() + "\\config.json");
             }
@@ -108,7 +112,7 @@ namespace K.Facade
                     Assembly assembly = Assembly.Load(item.ToString());
                     if (assembly != null)
                     {
-                        var listTypes = assembly.GetTypes().Where(p => p.GetCustomAttributes().Any(a => typeof(SetFacadeAttribute) == a.GetType())).ToList();
+                        var listTypes = assembly.GetTypes().Where(p => p.GetCustomAttributes().Any(a => SetFacadeAttribute == a.GetType())).ToList();
                         if (listTypes.Count() > 0)
                         {
                             Config(cfg =>

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LayerFacade", "LayerFacade\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Data", "K.Facade.Data\K.Facade.Data.csproj", "{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
