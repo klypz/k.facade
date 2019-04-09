@@ -12,6 +12,7 @@ namespace K.Facade.Data
         private readonly string target;
 
         public Type Repository => repository;
+        public Type Facade => Repository;
         public string Target => target;
 
         /// <summary>

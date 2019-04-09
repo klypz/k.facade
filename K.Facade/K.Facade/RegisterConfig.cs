@@ -74,7 +74,7 @@ namespace K.Facade
         {
             if (File.Exists(Directory.GetCurrentDirectory() + this.ConfigFileName))
             {
-                ConfigAll(Directory.GetCurrentDirectory() + "\\config.json");
+                ConfigAll(Directory.GetCurrentDirectory() + this.ConfigFileName);
             }
         }
 
@@ -119,15 +119,15 @@ namespace K.Facade
                             {
                                 listTypes.ForEach(f =>
                                 {
-                                    f.GetCustomAttributes<SetFacadeAttribute>().ToList().ForEach(a =>
+                                    f.GetCustomAttributes(SetFacadeAttribute).ToList().ForEach(a =>
                                     {
-                                        if (a.Target == null)
+                                        if (SetFacadeAttribute.GetProperty("Target").GetValue(a) == null)
                                         {
-                                            cfg.Register(a.Facade, f);
+                                            cfg.Register((Type)SetFacadeAttribute.GetProperty("Facade").GetValue(a), f);
                                         }
                                         else
                                         {
-                                            cfg.Register(a.Facade, a.Target, f);
+                                            cfg.Register((Type)SetFacadeAttribute.GetProperty("Facade").GetValue(a), (string)SetFacadeAttribute.GetProperty("Target").GetValue(a), f);
                                         }
                                     });
                                 });
