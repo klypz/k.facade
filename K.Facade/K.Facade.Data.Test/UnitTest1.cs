@@ -9,8 +9,27 @@ namespace K.Facade.Data.Test
 
     }
 
+    class DInhRepository : Repository
+    {
+        public DInhRepository(Repository repository) : base(repository)
+        {
+        }
+
+        public DInhRepository(DbConnection dbConnection) : base(dbConnection)
+        {
+        }
+
+        public DInhRepository(DbTransaction dbTransaction) : base(dbTransaction)
+        {
+        }
+
+        public DInhRepository(DbConnection dbConnection, bool isOwner) : base(dbConnection, isOwner)
+        {
+        }
+    }
+
     [SetRepository(typeof(ITeste))]
-    public class Teste : Repository, ITeste
+    class Teste : DInhRepository, ITeste
     {
         public Teste(Repository repository) : base(repository)
         {

@@ -16,11 +16,11 @@ namespace K.Facade.Data
         {
             if (value.GetType() != typeof(Type).GetType())
             {
-                return value.GetType().BaseType == typeof(Repository);
+                return value.GetType().IsSubclassOf(typeof(Repository));
             }
             else
             {
-                return ((Type)value).BaseType == typeof(Repository);
+                return ((Type)value).IsSubclassOf(typeof(Repository));
             }
         }
 
