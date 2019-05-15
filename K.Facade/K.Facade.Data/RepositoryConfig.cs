@@ -4,7 +4,7 @@
     {
         public RepositoryConfig() : base(new RepositoryMapping())
         {
-            ConfigFileName = "\\configRepository.json";
+            ConfigFileName = "\\config.json";
             SetFacadeAttribute = typeof(SetRepositoryAttribute);
         }
     }

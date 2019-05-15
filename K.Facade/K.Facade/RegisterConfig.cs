@@ -103,11 +103,11 @@ namespace K.Facade
                     }
                 }
 
-                if (jObject?["facade"]?["map"]?.Type != JTokenType.Array)
+                if (jObject?["facade"]?["data"]?["map"]?.Type != JTokenType.Array)
                 {
                     return;
                 }
-                foreach (var item in (JArray)jObject["facade"]["map"])
+                foreach (var item in (JArray)jObject["facade"]["data"]["map"])
                 {
                     Assembly assembly = Assembly.Load(item.ToString());
                     if (assembly != null)

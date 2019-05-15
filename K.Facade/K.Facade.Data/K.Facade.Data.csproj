@@ -2,13 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.4-beta</Version>
+    <Version>0.0.5-beta</Version>
     <Authors>Renato Moraes</Authors>
     <Company>Klypz.com.br</Company>
     <Product>Klypz Facade Data</Product>
     <Description>Mapeamento baseado no modelo facade visando abranger o "território" de acesso a dados</Description>
     <Copyright>MIT 2019</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>- Mudança no formato padrão de arquivo de configuração
+-- config.json
+-- facade[.data].map</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
