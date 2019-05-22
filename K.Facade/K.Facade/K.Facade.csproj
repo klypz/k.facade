@@ -31,4 +31,9 @@
     <PackageReference Include="newtonsoft.json" Version="12.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Utils\" />
+    <Folder Include="Structure\" />
+  </ItemGroup>
+
 </Project>

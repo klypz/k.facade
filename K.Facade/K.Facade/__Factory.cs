@@ -5,7 +5,7 @@ namespace K.Facade
     /// <summary>
     /// <para>Responsável por gerenciar as fachadas registradas no ambiente global</para>
     /// </summary>
-    public static class Factory
+    public static class __Factory
     {
         /// <summary>
         /// Obtém uma instancia referente a interface

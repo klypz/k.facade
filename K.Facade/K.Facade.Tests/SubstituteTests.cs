@@ -17,22 +17,22 @@ namespace K.Facade.Tests
         {
             ICustomer customer = Substitute.For<ICustomer>();
 
-            Factory.Config.ConfigAll();
-            Factory.Config.Config(cfg =>
+            __Factory.Config.ConfigAll();
+            __Factory.Config.Config(cfg =>
             {
                 cfg.Register<IMaintenance<object>>("TEST", customer);
             });
 
-            Assert.IsInstanceOfType(Factory.GetInstance<IPeople>(), typeof(IPeople));
-            Assert.IsInstanceOfType(Factory.GetInstance<ICustomer>("2"), typeof(Customer2));
-            Assert.IsInstanceOfType(Factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(__Factory.GetInstance<IPeople>(), typeof(IPeople));
+            Assert.IsInstanceOfType(__Factory.GetInstance<ICustomer>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(__Factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
 
             Guid id = Guid.NewGuid();
             var result = new Result<object>(ResultType.Empty);
             customer.Get(id).Returns(result);
 
-            Assert.IsInstanceOfType(Factory.GetInstance<IMaintenance<object>>("TEST"), typeof(ICustomer));
-            Assert.AreEqual(Factory.GetInstance<IMaintenance<object>>("TEST").Get(id), result);
+            Assert.IsInstanceOfType(__Factory.GetInstance<IMaintenance<object>>("TEST"), typeof(ICustomer));
+            Assert.AreEqual(__Factory.GetInstance<IMaintenance<object>>("TEST").Get(id), result);
         }
     }
 }

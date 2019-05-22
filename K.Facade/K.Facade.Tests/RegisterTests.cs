@@ -12,11 +12,11 @@ namespace K.Facade.Tests
         [TestCategory("Register")]
         public void RegisterGlobalTest()
         {
-            Factory.Config.ConfigAll();
+            __Factory.Config.ConfigAll();
 
-            Assert.IsInstanceOfType(Factory.GetInstance<IPeople>(), typeof(IPeople));
-            Assert.IsInstanceOfType(Factory.GetInstance<ICustomer>("2"), typeof(Customer2));
-            Assert.IsInstanceOfType(Factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(__Factory.GetInstance<IPeople>(), typeof(IPeople));
+            Assert.IsInstanceOfType(__Factory.GetInstance<ICustomer>("2"), typeof(Customer2));
+            Assert.IsInstanceOfType(__Factory.GetInstance<IMaintenance<object>>("2"), typeof(Customer2));
         }
 
         [TestMethod]
