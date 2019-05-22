@@ -19,6 +19,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="IRepository.cs" />
+    <Compile Remove="Repository.cs" />
+    <Compile Remove="RepositoryAlreadyHasAnOpenTransaction.cs" />
+    <Compile Remove="RepositoryConfig.cs" />
+    <Compile Remove="RepositoryException.cs" />
+    <Compile Remove="RepositoryMapping.cs" />
+    <Compile Remove="RepositoryNotOwnerOfTheConnection.cs" />
+    <Compile Remove="SetRepositoryAttribute.cs" />
+    <Compile Remove="_RepositoryFactory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="K.Facade.Data.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="newtonsoft.json" Version="12.0.1" />
   </ItemGroup>
 

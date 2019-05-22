@@ -1,10 +1,9 @@
-﻿using K.Facade.Base;
-using System;
+﻿using System;
 
 namespace K.Facade.Data
 {
 
-    [Serializable]
+	[Serializable]
     public class RepositoryNotInheritedException : Exception
     {
         public RepositoryNotInheritedException(string classOrigin): base($"Classe [{classOrigin}] não herda da classe [Repository]") { }

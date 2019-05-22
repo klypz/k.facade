@@ -26,7 +26,7 @@ namespace K.Facade
         /// <summary>
         /// Factory com base no mapeamento da instância
         /// </summary>
-        public IFactory Factory => new FactoryBase(mapping);
+        public IFactory Factory => new Base.FactoryBase(mapping);
 
         protected string ConfigFileName { get; set; } = "\\config.json";
 

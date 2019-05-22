@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace K.Facade
+namespace K.Facade.Structure
 {
     [Serializable]
     public class InstanceForFacadeNotFoundException : KFacadeException

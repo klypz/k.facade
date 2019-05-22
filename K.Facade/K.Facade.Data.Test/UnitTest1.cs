@@ -1,80 +1,42 @@
 ﻿using System;
 using System.Data.Common;
+using System.Data.SqlClient;
+using K.Facade.Data.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace K.Facade.Data.Test
 {
-    public interface ITeste : IDisposable
-    {
+	public interface IRepoTest : IRepository
+	{
+		void processes();
+	}
 
-    }
+	class RepoTest : IRepoTest
+	{
+		public DbConnection Connection { get; set; }
 
-    class DInhRepository : Repository
-    {
-        public DInhRepository(Repository repository) : base(repository)
-        {
-        }
+		public DbTransaction Transaction { get; set; }
 
-        public DInhRepository(DbConnection dbConnection) : base(dbConnection)
-        {
-        }
+		public void processes()
+		{
+			throw new NotImplementedException();
+		}
+	}
+	[TestClass]
+	public class UnitTest1
+	{
+		[TestMethod]
+		public void TestMethod1()
+		{
+			RepositoryConfiguration.GetConnection = delegate () { return new SqlConnection(); };
+			FacadeFactory.Repository.Map.Map(a =>
+			{
+				a.Add<IRepoTest, RepoTest>();
+			});
 
-        public DInhRepository(DbTransaction dbTransaction) : base(dbTransaction)
-        {
-        }
+			FacadeFactory
 
-        public DInhRepository(DbConnection dbConnection, bool isOwner) : base(dbConnection, isOwner)
-        {
-        }
-    }
-
-    [SetRepository(typeof(ITeste))]
-    class Teste : DInhRepository, ITeste
-    {
-        public Teste(Repository repository) : base(repository)
-        {
-        }
-
-        public Teste(DbConnection dbConnection) : base(dbConnection)
-        {
-        }
-
-        public Teste(DbTransaction dbTransaction) : base(dbTransaction)
-        {
-        }
-
-        public Teste(DbConnection dbConnection, bool isOwner) : base(dbConnection, isOwner)
-        {
-        }
-    }
-
-    [SetRepository(typeof(ITeste), "renato")]
-    public class TesteRenato : Repository, ITeste
-    {
-        public TesteRenato(Repository repository) : base(repository)
-        {
-        }
-
-        public TesteRenato(DbConnection dbConnection) : base(dbConnection)
-        {
-        }
-
-        public TesteRenato(DbTransaction dbTransaction) : base(dbTransaction)
-        {
-        }
-
-        public TesteRenato(DbConnection dbConnection, bool isOwner) : base(dbConnection, isOwner)
-        {
-        }
-    }
-
-    [TestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            RepositoryFactory.Config.ConfigAll();
-        }
-    }
+			var t = FacadeFactory.Repository.GetInstance<IRepoTest>();
+		}
+	}
 }

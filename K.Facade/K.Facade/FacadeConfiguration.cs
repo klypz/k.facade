@@ -4,8 +4,8 @@ using System.Text;
 
 namespace K.Facade
 {
-	public class FacadeConfiguration
+	public static class FacadeConfiguration
 	{
-		public string ConfigurationFile { get; set; }
+		public static string ConfigurationFile { get; set; }
 	}
 }

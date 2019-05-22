@@ -2,16 +2,11 @@
 using System;
 using System.Linq;
 
-namespace K.Facade.DomainFacade
+namespace K.Facade.DomainService
 {
 	public class FacadeMapper : IFacadeMapper
 	{
-		private MappingCollection _mapping;
-
-		protected FacadeMapper()
-		{
-
-		}
+		protected MappingCollection Mappings { get; set; }
 
 		public virtual IFacadeMapper Add(Type @interface, object value, string target)
 		{
@@ -37,9 +32,9 @@ namespace K.Facade.DomainFacade
 
 			var Add = new Mapping(@interface, value, target);
 
-			if (!_mapping.Any(a => a.CompareTo(Add) >= 2))
+			if (!Mappings.Any(a => a.CompareTo(Add) >= 2))
 			{
-				_mapping.Add(Add);
+				Mappings.Add(Add);
 			}
 
 			return this;
@@ -65,9 +60,9 @@ namespace K.Facade.DomainFacade
 
 			var mappgin = new Mapping(@interface, value);
 
-			if (!_mapping.Any(a => a.CompareTo(mappgin) >= 2))
+			if (!Mappings.Any(a => a.CompareTo(mappgin) >= 2))
 			{
-				_mapping.Add(mappgin);
+				Mappings.Add(mappgin);
 			}
 
 			return this;
@@ -75,22 +70,22 @@ namespace K.Facade.DomainFacade
 
 		public virtual IFacadeMapper Add<T>(T value)
 		{
-			Add(typeof(T), value);
+			return Add(typeof(T), value);
 		}
 
 		public virtual IFacadeMapper Add<T>(T value, string target)
 		{
-			Add(typeof(T), target, value);
+			return Add(typeof(T), value, target);
 		}
 
 		public virtual IFacadeMapper Add<T, TValue>() where TValue : T, new()
 		{
-			Add(typeof(T), typeof(TValue));
+			return Add(typeof(T), typeof(TValue));
 		}
 
 		public virtual IFacadeMapper Add<T, TValue>(string target) where TValue : T, new()
 		{
-			Add(typeof(T), typeof(TValue), target);
+			return Add(typeof(T), typeof(TValue), target);
 		}
 
 		protected Action<Type, Type> ValidateType { get; set; }
@@ -107,9 +102,9 @@ namespace K.Facade.DomainFacade
 			return (value.GetType() == typeof(Type).GetType()) ? funcResult((Type)value) : funcResult(value.GetType());
 		}
 
-		internal void SetMappings(MappingCollection mappings)
+		protected internal void SetMappings(MappingCollection mappings)
 		{
-			_mapping = mappings ?? throw new ArgumentNullException(nameof(mappings));
+			Mappings = mappings ?? throw new ArgumentNullException(nameof(mappings));
 		}
 	}
 }

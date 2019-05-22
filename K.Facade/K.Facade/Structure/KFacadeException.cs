@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
-namespace K.Facade
+namespace K.Facade.Structure
 {
-    public class KFacadeException : Exception
+	public class KFacadeException : Exception
     {
         public KFacadeException()
         {

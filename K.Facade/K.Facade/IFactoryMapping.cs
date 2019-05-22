@@ -1,12 +1,12 @@
 ﻿using K.Facade.Structure;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace K.Facade
 {
-	public interface IFacadeFactory
+	public interface IFactoryMapping
 	{
 		void Map(Action<IFacadeMapper> mapper);
+		void MapAll();
+		void MapAll(string jsonFile);
 	}
 }

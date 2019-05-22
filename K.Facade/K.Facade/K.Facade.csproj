@@ -19,12 +19,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Base\**" />
     <Compile Remove="Cleaner\**" />
     <Compile Remove="Contracts\**" />
+    <EmbeddedResource Remove="Base\**" />
     <EmbeddedResource Remove="Cleaner\**" />
     <EmbeddedResource Remove="Contracts\**" />
+    <None Remove="Base\**" />
     <None Remove="Cleaner\**" />
     <None Remove="Contracts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="IFactory.cs" />
+    <Compile Remove="IMappingConfig.cs" />
+    <Compile Remove="RegisterConfig.cs" />
+    <Compile Remove="SetFacadeAttribute.cs" />
+    <Compile Remove="__Factory.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +44,6 @@
 
   <ItemGroup>
     <Folder Include="Utils\" />
-    <Folder Include="Structure\" />
   </ItemGroup>
 
 </Project>

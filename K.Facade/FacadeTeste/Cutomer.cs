@@ -1,15 +1,13 @@
 ﻿using K.Essential;
-using K.Essential.Quick;
-using K.Facade;
 using LayerFacade;
 using System;
 using System.Collections.Generic;
 
 namespace FacadeTeste
 {
-    [SetFacade(typeof(ICustomer), "2")]
-    [SetFacade(typeof(IMaintenance<object>), "2")]
-    public class Customer2 : ICustomer
+	//[SetFacade(typeof(ICustomer), "2")]
+	//[SetFacade(typeof(IMaintenance<object>), "2")]
+	public class Customer2 : ICustomer
     {
         public Customer2()
         {
@@ -52,8 +50,8 @@ namespace FacadeTeste
         }
     }
 
-    [SetFacade(typeof(ICustomer))]
-    [SetFacade(typeof(IMaintenance<object>))]
+    //[SetFacade(typeof(ICustomer))]
+    //[SetFacade(typeof(IMaintenance<object>))]
     class Customer : ICustomer
     {
         public int Delete(object entity)

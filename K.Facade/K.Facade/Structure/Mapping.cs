@@ -21,7 +21,7 @@ namespace K.Facade.Structure
 		{
 			get
 			{
-				if (Value.GetType() == typeof(Type))
+				if (Value.GetType() == typeof(Type).GetType())
 				{
 					return MappingModeEnum.Type;
 				}
