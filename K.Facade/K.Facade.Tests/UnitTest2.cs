@@ -1,6 +1,7 @@
 ﻿using NSubstitute;
 using K.Facade.Tests.NewFacade;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using K.Facade.Domain;
 
 namespace K.Facade.Tests
 {
@@ -11,22 +12,23 @@ namespace K.Facade.Tests
 		public UnitTest2()
 		{
 			useRepo2 = Substitute.For<IUseRepo>();
+			useRepo2.Name.Returns("2");
+		}
+
+		[TestMethod]
+		public void MyTestMethod()
+		{
+			DomainFactory.Mapper.LoadMapping();
+
 		}
 
 		[TestMethod]
 		public void TestMethod1()
 		{
-			FacadeFactory.Domain.Map.Map(a =>
-			{
-				a.Add<IUseRepo, UseRepo>();
-			});
-			FacadeFactory.Domain.Map.Map(a =>
-			{
-				a.Add<IUseRepo>(useRepo2, "sub");
-			});
+			DomainFactory.Mapper.Map(a => a.Add<IUseRepo, UseRepo>().Add(useRepo2, "repo"));
 
-			IUseRepo useRepo = FacadeFactory.Domain.GetInstance<IUseRepo>();
-			IUseRepo _useRepo2 = FacadeFactory.Domain.GetInstance<IUseRepo>("sub");
+			var usrDefault = DomainFactory.GetInstance<IUseRepo>();
+			var usrSubst = DomainFactory.GetInstance<IUseRepo>("repo");
 		}
 	}
 }

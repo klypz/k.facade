@@ -1,71 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Text;
+﻿using K.Facade.Abstracts;
+using K.Facade.Data.Dispatcher;
 using K.Facade.Data.Repository;
-using K.Facade.Structure;
-using DOM = K.Facade.Data.Repository;
+using K.Facade.Dispatcher;
+using K.Facade.Mapper;
+using System.Data.Common;
+
 namespace K.Facade.Data
 {
-
-	internal class RepositoryFactory : FacadeFactoryBase, IRepositoryFactory
+	public static class RepositoryFactory
 	{
-		public RepositoryFactory() : base(new RepositoryMapper(), new DOM.RepositoryFactory(), new MappingCollection())
+		private static MappingCollection Mappings { get; } = new MappingCollection();
+		private static DispatchingRepository Dispatcher { get; } = new DispatchingRepository(Mappings, new DispatchingInstancer());
+		public static IMappingFactory Mapper { get; } = new MappingRepositoryFactory(Mappings, "repository", typeof(SetRepositoryAttribute));
+
+		public static T GetInstance<T>()
 		{
-			((RepositoryMapper)FacadeMapper).SetMappings(_mappings);
-			((DOM.RepositoryFactory)FacadeFactory).SetMappings(_mappings);
+			return Dispatcher.GetInstance<T>();
+		}
+		public static T GetInstance<T>(string target)
+		{
+			return Dispatcher.GetInstance<T>(target);
 		}
 
-		public new T GetInstance<T>()
+		public static T GetInstance<T>(DbConnection dbConnection)
 		{
-			return GetInstance<T>(RepositoryConfiguration.GetConnection() ?? null);
+			return Dispatcher.GetInstance<T>(dbConnection);
+		}
+		public static T GetInstance<T>(DbTransaction dbTransaction)
+		{
+			return Dispatcher.GetInstance<T>(dbTransaction);
+		}
+		public static T GetInstance<T>(IRepository repository)
+		{
+			return Dispatcher.GetInstance<T>(repository);
+		}
+		public static T GetInstance<T>(DbConnection dbConnection, string target)
+		{
+			return Dispatcher.GetInstance<T>(dbConnection, target);
+		}
+		public static T GetInstance<T>(DbTransaction dbTransaction, string target)
+		{
+			return Dispatcher.GetInstance<T>(dbTransaction, target);
+		}
+		public static T GetInstance<T>(IRepository repository, string target)
+		{
+			return Dispatcher.GetInstance<T>(repository, target);
 		}
 
-		public new T GetInstance<T>(string target)
-		{
-			return GetInstance<T>(RepositoryConfiguration.GetConnection() ?? null, target);
-		}
-
-
-		public T GetInstance<T>(DbConnection dbConnection)
-		{
-			return GetInstance<T>(dbConnection, null);
-		}
-
-		public T GetInstance<T>(DbTransaction dbTransaction)
-		{
-			return GetInstance<T>(dbTransaction, null);
-		}
-
-		public T GetInstance<T>(IRepository repository)
-		{
-			return GetInstance<T>(repository, null);
-		}
-
-		public T GetInstance<T>(DbConnection dbConnection, string target)
-		{
-			IRepository result = (IRepository)base.GetInstance<T>(target);
-			result.Connection = dbConnection;
-
-			return (T)result;
-		}
-
-		public T GetInstance<T>(DbTransaction dbTransaction, string target)
-		{
-			IRepository result = (IRepository)base.GetInstance<T>(target);
-			result.Connection = dbTransaction.Connection;
-			result.Transaction = dbTransaction;
-
-			return (T)result;
-		}
-
-		public T GetInstance<T>(IRepository repository, string target)
-		{
-			IRepository result = (IRepository)base.GetInstance<T>(target);
-			result.Connection = repository.Connection;
-			result.Transaction = repository.Transaction;
-
-			return (T)result;
-		}
 	}
 }

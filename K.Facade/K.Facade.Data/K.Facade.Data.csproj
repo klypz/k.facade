@@ -20,13 +20,15 @@
 
   <ItemGroup>
     <Compile Remove="IRepository.cs" />
+    <Compile Remove="IRepositoryFactory.cs" />
     <Compile Remove="Repository.cs" />
     <Compile Remove="RepositoryAlreadyHasAnOpenTransaction.cs" />
     <Compile Remove="RepositoryConfig.cs" />
     <Compile Remove="RepositoryException.cs" />
     <Compile Remove="RepositoryMapping.cs" />
     <Compile Remove="RepositoryNotOwnerOfTheConnection.cs" />
-    <Compile Remove="SetRepositoryAttribute.cs" />
+    <Compile Remove="Repository\RepositoryFactory.cs" />
+    <Compile Remove="Repository\RepositoryMapper.cs" />
     <Compile Remove="_RepositoryFactory.cs" />
   </ItemGroup>
 

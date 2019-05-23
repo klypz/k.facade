@@ -1,12 +1,14 @@
 ﻿using K.Essential;
+using K.Essential.Quick;
+using K.Facade.Domain;
 using LayerFacade;
 using System;
 using System.Collections.Generic;
 
 namespace FacadeTeste
 {
-	//[SetFacade(typeof(ICustomer), "2")]
-	//[SetFacade(typeof(IMaintenance<object>), "2")]
+	[SetFacade(typeof(ICustomer), "2")]
+	[SetFacade(typeof(IMaintenance<object>), "2")]
 	public class Customer2 : ICustomer
     {
         public Customer2()

@@ -1,10 +1,11 @@
-﻿using LayerFacade;
+﻿using K.Facade.Domain;
+using LayerFacade;
 using System;
 using System.Collections.Generic;
 
 namespace FacadeTeste
 {
-	//[SetFacade(typeof(IPeople))]
+	[SetFacade(typeof(IPeople))]
 	class People : IPeople
     {
         public List<object> GetList()

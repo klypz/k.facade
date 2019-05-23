@@ -1,7 +1,8 @@
 {
   "facade": {
-    "data": {
-      "map": [ "K.Facade.Data.Test" ]
+    "map": {
+      "repository": [ "K.Facade.Data.Test" ],
+      "domain": [ "K.Facade.Data.Test" ]
     }
   }
 }

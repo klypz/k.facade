@@ -22,16 +22,23 @@
     <Compile Remove="Base\**" />
     <Compile Remove="Cleaner\**" />
     <Compile Remove="Contracts\**" />
+    <Compile Remove="DomainService\**" />
     <EmbeddedResource Remove="Base\**" />
     <EmbeddedResource Remove="Cleaner\**" />
     <EmbeddedResource Remove="Contracts\**" />
+    <EmbeddedResource Remove="DomainService\**" />
     <None Remove="Base\**" />
     <None Remove="Cleaner\**" />
     <None Remove="Contracts\**" />
+    <None Remove="DomainService\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="FacadeFactory.cs" />
+    <Compile Remove="FactoryMapping.cs" />
+    <Compile Remove="IFacade.cs" />
     <Compile Remove="IFactory.cs" />
+    <Compile Remove="IFactoryMapping.cs" />
     <Compile Remove="IMappingConfig.cs" />
     <Compile Remove="RegisterConfig.cs" />
     <Compile Remove="SetFacadeAttribute.cs" />
@@ -40,10 +47,6 @@
 
   <ItemGroup>
     <PackageReference Include="newtonsoft.json" Version="12.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>

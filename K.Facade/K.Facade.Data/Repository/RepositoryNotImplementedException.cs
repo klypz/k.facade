@@ -1,10 +1,9 @@
-﻿using K.Facade.Structure;
-using System;
+﻿using System;
 
 namespace K.Facade.Data.Repository
 {
 	[Serializable]
-	public class RepositoryNotImplementedException : KFacadeException
+	public class RepositoryNotImplementedException : Exception
 	{
 		public RepositoryNotImplementedException(string @interface, string @ref) : base($"Interface [{@interface}] not inherit [{@ref}].")
 		{
