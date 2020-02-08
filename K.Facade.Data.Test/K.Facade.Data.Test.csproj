@@ -63,9 +63,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\K.Facade.Data\K.Facade.Data.csproj">
       <Project>{17d9fbe5-dc89-40ee-99c0-93d48b330ac9}</Project>
       <Name>K.Facade.Data</Name>
@@ -74,6 +71,9 @@
       <Project>{e5ac9d16-30e9-47c1-bc45-92ee742dad63}</Project>
       <Name>K.Facade</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
