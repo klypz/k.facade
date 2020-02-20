@@ -1,7 +1,7 @@
 # K.Facade
-K.Facade busca facilitar a configuraÁ„o da tÈcnica de estrutura de fachada.
+K.Facade busca facilitar a configura√ß√£o da t√©cnica de estrutura de fachada.
 
-# ComeÁando
+# Come√ßando
 ## NUGET
 ```
 Install-Package K.Facade -Version 1.1.7
@@ -11,12 +11,12 @@ Install-Package K.Facade -Version 1.1.7
 
 ## Latest releases
 - **Mapeamento**
-  - **config.json**: ConfiguraÁ„o de rastreio de mapeamento
-  - **Contexto de Mapeamento**: Possibilita a criaÁ„o de um mapeamento fora do contexto global
-  - **Alvo**: *Desvio* de mapeamento de implementaÁ„o
-- **PersonalizaÁ„o**
-  - HeranÁa do Configurador de Registros
-  - HeranÁa da *Factory* de Mapeamento
+  - **config.json**: Configura√ß√£o de rastreio de mapeamento
+  - **Contexto de Mapeamento**: Possibilita a cria√ß√£o de um mapeamento fora do contexto global
+  - **Alvo**: *Desvio* de mapeamento de implementa√ß√£o
+- **Personaliza√ß√£o**
+  - Heran√ßa do Configurador de Registros
+  - Heran√ßa da *Factory* de Mapeamento
   - Facade com construtor
 
 # Como Utilizar
@@ -32,7 +32,7 @@ public interface IUserSign
 	bool SignOut(string token);
 }
 ```
-## ImplementaÁ„o
+## Implementa√ß√£o
 - Implemente a interface
 
 
@@ -53,11 +53,11 @@ public class UserSign: IUserSign
 }
 ```
 ## Mapeamento
-Aqui existem duas maneiras de fazer o mapeamento das implementaÁıes.
+Aqui existem duas maneiras de fazer o mapeamento das implementa√ß√µes.
 ### Mapeamento por Atributo
 - Utilize o atributo `[SetFacade]` para definir o mapeamento
   - O atributo exige um parametro do tipo `Type`
-- … necess·rio uma configuraÁ„o na aplicaÁ„o
+- √â necess√°rio uma configura√ß√£o na aplica√ß√£o
 
 
 **Exemplo**
@@ -77,9 +77,9 @@ class UserSign: IUserSign
 	}
 }
 ```
-### Mapeamento por CÛdigo
-- Define um mapeamento atravÈs da codificaÁ„o
-- Pode ser definido na aplicaÁ„o
+### Mapeamento por C√≥digo
+- Define um mapeamento atrav√©s da codifica√ß√£o
+- Pode ser definido na aplica√ß√£o
 
 **Exemplo**
 ```csharp
@@ -93,25 +93,25 @@ public class Startup
 ```
 
 ### Mapeamento com Alvos
-- Utilizado para definir mais de uma implementaÁ„o para a mesma interface
+- Utilizado para definir mais de uma implementa√ß√£o para a mesma interface
 **Exemplo Atributo**
 ```csharp
 //Mapeamento por atributo
 [SetFacade(typeof(IUserSign), "TARGET_NAME")]
 
-//Mapeamento por cÛdigo
+//Mapeamento por c√≥digo
 DomainFactory.Mapper.Map(a => a.Add<IUserSign, UserSign>("TARGET_NAME"));
 ```
 
 ### Mapeamento Instanciado
-Cada vez que uma facade È chamada a Factory cria uma instancia com base no mapeamento, 
-mas vocÍ pode fazer um mapeamento instanciado.
-- Trata-se de passar uma instancia da implementaÁ„o para o mapeamento
-- Somente aplic·vel no modelo **Mapeamento por cÛdigo**
+Cada vez que uma facade √© chamada a Factory cria uma instancia com base no mapeamento, 
+mas voc√™ pode fazer um mapeamento instanciado.
+- Trata-se de passar uma instancia da implementa√ß√£o para o mapeamento
+- Somente aplic√°vel no modelo **Mapeamento por c√≥digo**
 - Ideal para projeto de Teste Utilizando *mock*
 
 
-**Exemplo CÛdigo**
+**Exemplo C√≥digo**
 ```csharp
 //Mapeamento Comum
 DomainFactory.Mapper.Map(a => a.Add<IUserSign>(new UserSign()));
@@ -121,23 +121,23 @@ DomainFactory.Mapper.Map(a => a.Add<IUserSign>(new UserSign(), "TARGET_NAME"));
 ```
 
 ### Configurando Carregamento de Mapeamento por atributo
-Para que o mapeamento por atributo funcione, È necess·rio que seja carregado junto a aplicaÁ„o.
-1. Crie um projeto de aplicaÁ„o (Console, Windows, Web...)
-2. Crie um arquivo "config.json" (por padr„o)
+Para que o mapeamento por atributo funcione, √© necess√°rio que seja carregado junto a aplica√ß√£o.
+1. Crie um projeto de aplica√ß√£o (Console, Windows, Web...)
+2. Crie um arquivo "config.json" (por padr√£o)
 	
-	2.1. No arquivo config.json modifique a propriedade '*Copiar para diretÛrio de saÌda*' para ***Copiar***
-3. Conte˙do do config.json
+	2.1. No arquivo config.json modifique a propriedade '*Copiar para diret√≥rio de sa√≠da*' para ***Copiar***
+3. Conte√∫do do config.json
 ```json
 {
   "facade": {
     "map": {
-      "domain": [ /*Array de Assemblies com cÛdigo Implementado*/ ]
+      "domain": [ /*Array de Assemblies com c√≥digo Implementado*/ ]
     }
   }
 }
 ```
 
-4. Na aplicaÁ„o execute o cÛdigo
+4. Na aplica√ß√£o execute o c√≥digo
 ```csharp
 public class Startup
 {
@@ -147,14 +147,14 @@ public class Startup
 	}
 }
 ```
-## Obtendo Inst‚ncia Mapeada
-- Utilize o mÈtodo `DomainFactory.GetInstance`para obter uma instancia do mapeamento
+## Obtendo Inst√¢ncia Mapeada
+- Utilize o m√©todo `DomainFactory.GetInstance`para obter uma instancia do mapeamento
 ```csharp
-//Obter Intancia padr„o
+//Obter Intancia padr√£o
 IUserSign userSign = DomainFactory.GetInstance<IUserSign>();
 //Obter instancia com alvo
 IUserSign userSignTarg = DomainFactory.GetInstance<IUserSign>("TARGET_NAME");
 ```
 
-# ⁄teis
-[Projeto de teste](../tests/k.facade.tests/)
+# √öteis
+[Projeto de teste](../Tests/K.Facade.Tests)
