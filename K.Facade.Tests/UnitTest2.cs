@@ -25,7 +25,7 @@ namespace K.Facade.Tests
 		[TestMethod]
 		public void TestMethod1()
 		{
-			DomainFactory.Mapper.Map(a => a.Add<IUseRepo, UseRepo>().Add(useRepo2, "repo"));
+			DomainFactory.Mapper.Map(a => a.Add<IUseRepo, UseRepo>());
 
 			var usrDefault = DomainFactory.GetInstance<IUseRepo>();
 			var usrSubst = DomainFactory.GetInstance<IUseRepo>("repo");

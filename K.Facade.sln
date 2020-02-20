@@ -1,21 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2019
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K.Facade", "K.Facade\K.Facade.csproj", "{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Tests", "K.Facade.Tests\K.Facade.Tests.csproj", "{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacadeTeste", "FacadeTeste\FacadeTeste.csproj", "{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LayerFacade", "LayerFacade\LayerFacade.csproj", "{7A30B587-7F61-4AA6-9DE2-E0D98311673A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K.Facade.Data", "K.Facade.Data\K.Facade.Data.csproj", "{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Data.Test", "K.Facade.Data.Test\K.Facade.Data.Test.csproj", "{A646D689-627E-40DE-AC00-C0D7064CB962}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F2FB6F7F-5EDC-4A20-B37C-258EAD511310}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K.Facade.Tests", "Tests\K.Facade.Tests\K.Facade.Tests.csproj", "{E3078E4D-D698-48C7-9545-D76B2031D9A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,34 +27,20 @@ Global
 		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5AC9D16-30E9-47C1-BC45-92EE742DAD63}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A30B587-7F61-4AA6-9DE2-E0D98311673A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D9FBE5-DC89-40EE-99C0-93D48B330AC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A646D689-627E-40DE-AC00-C0D7064CB962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A646D689-627E-40DE-AC00-C0D7064CB962}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A646D689-627E-40DE-AC00-C0D7064CB962}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A646D689-627E-40DE-AC00-C0D7064CB962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3078E4D-D698-48C7-9545-D76B2031D9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3078E4D-D698-48C7-9545-D76B2031D9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3078E4D-D698-48C7-9545-D76B2031D9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3078E4D-D698-48C7-9545-D76B2031D9A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D4905716-CAA6-48FD-9134-BF7BBE9E4BE8} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
-		{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
-		{7A30B587-7F61-4AA6-9DE2-E0D98311673A} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
+		{E3078E4D-D698-48C7-9545-D76B2031D9A3} = {7A349F39-E20B-4B8E-84A0-DE7DE43A01BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5844AA64-BA21-4704-A899-13CDFF880B01}

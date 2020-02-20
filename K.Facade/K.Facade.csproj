@@ -23,14 +23,17 @@
     <Compile Remove="Cleaner\**" />
     <Compile Remove="Contracts\**" />
     <Compile Remove="DomainService\**" />
+    <Compile Remove="packages\**" />
     <EmbeddedResource Remove="Base\**" />
     <EmbeddedResource Remove="Cleaner\**" />
     <EmbeddedResource Remove="Contracts\**" />
     <EmbeddedResource Remove="DomainService\**" />
+    <EmbeddedResource Remove="packages\**" />
     <None Remove="Base\**" />
     <None Remove="Cleaner\**" />
     <None Remove="Contracts\**" />
     <None Remove="DomainService\**" />
+    <None Remove="packages\**" />
   </ItemGroup>
 
   <ItemGroup>

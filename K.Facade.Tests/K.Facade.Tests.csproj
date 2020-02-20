@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.AssemblyInfo.cs" />
+    <Compile Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.AssemblyInfo.cs" />
     <Compile Include="NewFacade\FactoryNew.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest2.cs" />
@@ -77,13 +79,31 @@
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="K.Facade.Data\bin\Debug\K.Facade.Data.0.0.5.1-beta.nupkg" />
+    <None Include="K.Facade.Data\bin\Debug\netstandard2.0\K.Facade.Data.deps.json" />
+    <None Include="K.Facade.Data\bin\Release\K.Facade.Data.0.1.5.1-beta.nupkg" />
+    <None Include="K.Facade.Data\bin\Release\K.Facade.Data.1.0.0.nupkg" />
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.Data.deps.json" />
+    <None Include="K.Facade.Data\obj\Debug\K.Facade.Data.0.0.5.1-beta.nuspec" />
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.AssemblyInfoInputs.cache" />
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.assets.cache" />
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.csproj.CopyComplete" />
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.csproj.CoreCompileInputs.cache" />
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.csprojAssemblyReference.cache" />
+    <None Include="K.Facade.Data\obj\K.Facade.Data.csproj.nuget.cache" />
+    <None Include="K.Facade.Data\obj\K.Facade.Data.csproj.nuget.dgspec.json" />
+    <None Include="K.Facade.Data\obj\K.Facade.Data.csproj.nuget.g.props" />
+    <None Include="K.Facade.Data\obj\K.Facade.Data.csproj.nuget.g.targets" />
+    <None Include="K.Facade.Data\obj\project.assets.json" />
+    <None Include="K.Facade.Data\obj\Release\K.Facade.Data.0.1.5.1-beta.nuspec" />
+    <None Include="K.Facade.Data\obj\Release\K.Facade.Data.1.0.0.nuspec" />
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.AssemblyInfoInputs.cache" />
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.assets.cache" />
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.csproj.CopyComplete" />
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FacadeTeste\FacadeTeste.csproj">
-      <Project>{DDA3DC84-18A5-4D5E-AD65-ECC5778D3AA2}</Project>
-      <Name>FacadeTeste</Name>
-    </ProjectReference>
     <ProjectReference Include="..\K.Facade\K.Facade.csproj">
       <Project>{e5ac9d16-30e9-47c1-bc45-92ee742dad63}</Project>
       <Name>K.Facade</Name>
@@ -93,7 +113,51 @@
       <Name>LayerFacade</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Debug\netstandard2.0\K.Facade.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Debug\netstandard2.0\K.Facade.Data.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Debug\netstandard2.0\K.Facade.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Debug\netstandard2.0\K.Facade.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.Data.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.Data.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\bin\Release\netstandard2.0\K.Facade.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Debug\netstandard2.0\K.Facade.Data.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="K.Facade.Data\obj\Release\netstandard2.0\K.Facade.Data.pdb" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
