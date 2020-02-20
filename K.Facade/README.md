@@ -4,7 +4,7 @@ K.Facade busca facilitar a configuração da técnica de estrutura de fachada.
 # Começando
 ## NUGET
 ```
-install-package k.facade
+Install-Package K.Facade -Version 1.1.7
 ```
 ## Software dependencies
 - **newtonsoft.json** (>= 12.0.1)
@@ -155,12 +155,6 @@ IUserSign userSign = DomainFactory.GetInstance<IUserSign>();
 //Obter instancia com alvo
 IUserSign userSignTarg = DomainFactory.GetInstance<IUserSign>("TARGET_NAME");
 ```
-# Build and Test
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Úteis
+[Projeto de teste](../tests/k.facade.tests/)
